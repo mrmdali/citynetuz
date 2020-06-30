@@ -1,0 +1,53 @@
+.clogo {
+	width: 200px;
+}
+.header-info-right>ul>li {
+	padding-top: 10px;
+}
+.header-info-left>ul>li>a {
+	color: #86878a;
+}
+.header-info-left>ul>li>a:hover {
+	color: #1F7BBF;
+}
+ul.list>li {
+	display: block !important;
+}
+.about-img img{
+	width: 100%;
+}
+.table th, .table td {
+	vertical-align: middle !important;
+}
+.h1-testimonial-active {
+	align-items: center;
+	display: flex;
+}
+.footer-text {
+    color: #868c98;
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: 30px
+}
+.hero-man img {
+	width: 100%
+}
+.slick-track {
+	display: flex;
+	align-items: center;
+}
+li.hidden {
+	display: none !important;
+}
+
+@media screen and (max-width: 991px) {
+    li.hidden {
+		display: block !important;
+	}
+	.lang {
+		z-index: 100
+	}
+	.md-show {
+		display: none !important;	
+	}
+}

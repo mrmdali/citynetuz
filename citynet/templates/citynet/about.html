@@ -1,0 +1,129 @@
+{% extends 'citynet/main.html' %}
+{% load static %}
+    {% block content %}
+    <main>
+        <!--? Hero Start -->
+        <div class="slider-area">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 text-center">
+                                <h2>About Us</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+
+        <!-- About Details Start -->
+        <div class="about-details section-padding30">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="about-details-cap mb-50">
+                            <h4>{{ about.about_top_title }}</h4>
+                            <p>{{ about.about_top_text }}</p>
+                        </div>
+
+                        <!--? About Law Start-->
+                        <div class="about-area section-padding2">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="about-caption mb-50">
+                                            <!-- Section Tittle -->
+                                            <div class="section-tittle mb-35">
+                                                <h2>{{ about.about_title }}</h2>
+                                            </div>
+                                            <p>{{ about.about_main_text }}</p>
+                                            <p>{{ about.about_second_text }}</p>
+                                            <p>{{ about.about_third_text }}</p>
+                                            <ul>
+                                                {% for item in about_item %}
+                                                    <li><span class="{{ item.item_icon }}"></span> {{ item.item_text }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <!-- about-img -->
+                                        <div class="about-img ">
+                                            <div class="about-font-img d-none d-lg-block">
+                                                <img src="{{ about.about_img.url }}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- About Law End-->
+
+                        <div class="about-details-cap mb-50">
+                            <h4>{{ about.about_bottom_title }}</h4>
+                            <p>{{ about.about_bottom_text }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About Details End -->
+
+        <!--? Count Down Start -->
+        <div class="count-down-area pt-90 pb-60 section-bg" data-background="assets/img/gallery/section_bg01.png">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="count-down-wrapper" >
+                            <div class="row justify-content-between">
+                                {% for item in counter %}
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                    <!-- Counter Up -->
+                                    <div class="single-counter text-center">
+
+                                        <span class="counter color-blue">{{ item.counter_number }}</span> <br>
+                                        <p class="color-blue">+ {{ item.counter_title }}</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Count Down End -->
+
+        <!--? Partners Start -->
+        <div class="testimonial-area fix pt-100 pb-100 section-bg"
+            <div class="">
+                <div class="row justify-content-center">
+                    <div class="cl-xl-7 col-lg-8 col-md-10">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle section-tittle2 text-center mb-70">
+                            <span>{{ partner.partner_cap }}</span>
+                            <h2 style="color: #000">{{ partner.partner_title }}</h2>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-9 col-md-9">
+                        <div class="h1-testimonial-active">
+                            <!-- Single Partner -->
+                            {% for item in partner_img %}
+                            <div class="single-testimonial pt-65">
+                                <!-- Partners tittle -->
+                                <div class="testimonial-icon mb-45">
+                                    <img src="{{ item.partner_image.url }}" class="ani-btn " alt="">
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Partners End -->
+
+    </main>
+    {% endblock %}

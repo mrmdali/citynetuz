@@ -1,0 +1,297 @@
+{% extends 'citynet/main.html' %}
+{% load static %}
+{% block content %}
+<main>
+    <!--? slider Area Start-->
+    <div class="slider-area ">
+        <div class="slider-active">
+            <!-- Single Slider -->
+            {% for item in banner %}
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-6 col-lg-7 col-md-8">
+                            <div class="hero__caption">
+                                <span data-animation="fadeInLeft" data-delay=".2s">{{ item.banner_cap }}</span>
+                                <h1 data-animation="fadeInLeft" data-delay=".4s">{{ item.banner_title }}</h1>
+                                <!-- Hero-btn -->
+                                <div class="hero__btn">
+                                    <a href="{% url 'contact' %}" class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-5">
+                            <div class="hero-man d-none d-lg-block f-right" data-animation="jello" data-delay=".4s">
+                                <img src="{{ item.banner_img.url }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- slider Area End-->
+
+    <!--? Services Area Start -->
+    <div class="categories-area section-padding30">
+        <div class="container">
+            <div class="row justify-content-sm-center">
+                <div class="cl-xl-7 col-lg-8 col-md-10">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle text-center mb-70">
+                        <span>{{ service_header.service_cap }}</span>
+                        <h2>{{ service_header.service_title }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for item in service_item %}
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat mb-50">
+                        <div class="cat-icon">
+                            <span class="{{ item.item_icon }}"></span>
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="#">{{ item.item_title }}</a></h5>
+                            <p>{{ item.item_text }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- Section Button -->
+            <!-- <div class="row">
+                <div class="col-lg-12">
+                    <div class="browse-btn2 text-center mt-50">
+                        <a href="courses.html" class="btn">Find More Courses</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <!-- Services Area End -->
+
+    <!--? Count Down Start -->
+    <div class="count-down-area pt-90 pb-60 section-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-12">
+                    <div class="count-down-wrapper" >
+                        <div class="row justify-content-between">
+                            {% for item in counter %}
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                <!-- Counter Up -->
+                                <div class="single-counter text-center">
+
+                                    <span class="counter color-blue">{{ item.counter_number }}</span> <br>
+                                    <p class="color-blue">+ {{ item.counter_title }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Count Down End -->
+
+    <!--? About Law Start-->
+    <div class="about-area section-padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="about-caption mb-50">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle mb-35">
+                            <span>{{ about.about_cap }}</span>
+                            <h2>{{ about.about_title }}</h2>
+                        </div>
+                        <p>{{ about.about_main_text }}</p>
+                        <ul>
+                            {% for item in about_item %}
+                                <li><span class="{{ item.item_icon }}"></span> {{ item.item_text }}</li>
+                            {% endfor %}
+                        </ul>
+                        <a href="{% url 'about' %}" class="btn">More About Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <!-- about-img -->
+                    <div class="about-img ">
+                        <div class="about-font-img d-none d-lg-block">
+                            <img src="{{ about.about_img.url }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Law End-->
+
+
+    <!--? Popular Tariffs Start -->
+    <div class="popular-course section-padding30">
+        <div class="container">
+            <div class="row justify-content-sm-center">
+                <div class="col-md-10">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle text-center mb-70">
+                        <span>{{ tariff_header.tariff_cap }}</span>
+                        <h2>{{ tariff_header.tariff_title }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-striped table-responsive-md btn-table">
+
+                        <thead>
+                            <tr>
+                                <th>Название Тарифа</th>
+                                <th class="text-center">Скорость</th>
+                                <th class="text-center">Ночной Серфинг <br>
+                                00:00 - 10:00</th>
+                                <th class="text-center">Стоимность</th>
+                                <th class="text-center">Заказать</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for item in tariff %}
+                            {% if item.type_customer.id == 1 %}
+                                <tr>
+                                    <th scope="row">{{ item.tariff_name }}</th>
+                                    <td class="text-center">{{ item.tariff_speed }} Мбит/с</td>
+                                    <td class="text-center">{{ item.tariff_speed_night }} Мбит/с</td>
+                                    <td class="text-center">{{ item.tariff_price }} Сум</td>
+                                    <td class="text-center">
+                                        {% if item.tariff_button %}
+                                            <a type="button" class="boxed-btn btn-sm m-0" href="{% url 'contact' %}">{{ item.tariff_button }}</a>
+                                        {% else %}
+                                            <a type="button" class="boxed-btn btn-sm m-0">Заказать</a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                        </tbody>
+
+                  </table>
+              </div>
+            </div>
+            <!-- Section Button -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="browse-btn2 text-center mt-50">
+                        <a href="{% url 'internet' %}" class="btn">Больше О Траффиках</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Popular Tariffs End -->
+
+    <!--? Partners Start -->
+    <div class="testimonial-area fix pt-100 pb-100 section-bg"  data-background="{% static 'citynet/img/gallery/section_bg03.png' %}">
+        <div class="">
+            <div class="row justify-content-center">
+                <div class="cl-xl-7 col-lg-8 col-md-10">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle section-tittle2 text-center mb-70">
+                        <span>{{ partner.partner_cap }}</span>
+                        <h2>{{ partner.partner_title }}</h2>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-9 col-md-9">
+                    <div class="h1-testimonial-active">
+                        <!-- Single Partner -->
+                        {% for item in partner_img %}
+                        <div class="single-testimonial pt-65">
+                            <!-- Partners tittle -->
+                            <div class="testimonial-icon mb-45">
+                                <img src="{{ item.partner_image.url }}" class="ani-btn " alt="">
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Partners End -->
+
+    <!--? Clients Start -->
+    <div class="testimonial-area fix pt-100 pb-100 section-bg" >
+        <div class="">
+            <div class="row justify-content-center">
+                <div class="cl-xl-7 col-lg-8 col-md-10">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle section-tittle2 text-center mb-70">
+                        <span>{{ client.client_cap }}</span>
+                        <h2 style="color: #000">{{ client.client_title }}</h2>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-9 col-md-9">
+                    <div class="h1-testimonial-active">
+                        <!-- Single Partner -->
+                        {% for item in client_img %}
+                        <div class="single-testimonial pt-65">
+                            <!-- Partner tittle -->
+                            <div class="testimonial-icon mb-45">
+                                <img src="{{ item.client_image.url }}" class="ani-btn " alt="">
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Clients End -->
+
+    <!--? Blog Area Start -->
+    <div class="home-blog-area section-padding30">
+        <div class="container">
+            <!-- Section Tittle -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-tittle text-center mb-50">
+                        <span>{{ news_header.news_cap }}</span>
+                        <h2>{{ news_header.news_title }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                {% for item in news_item_last_two %}
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="home-blog-single mb-30">
+                        <div class="blog-img-cap">
+                            <div class="blog-img">
+                                <img src="{{ item.image.url }}" alt="">
+                                <!-- Blog date -->
+                                <div class="blog-date text-center">
+                                    <span>{{ item.created_date.day }}</span>
+                                    <p>{{ item.created_date |date:"M"  }}</p>
+                                </div>
+                            </div>
+                            <div class="blog-cap">
+                                {% if item.news_type %}
+                                    <p>| {{ item.news_type }}</p>
+                                {% endif %}
+                                <h3><a href="blog_details.html">{{ item.news_title }}</a></h3>
+                                <a href="{% url 'single-blog' item.id %}" class="more-btn">Read more »</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!-- Blog Area End -->
+</main>
+{% endblock %}

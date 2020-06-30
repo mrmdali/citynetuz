@@ -1,0 +1,53 @@
+{% extends 'citynet/main.html' %}
+{% load static %}
+   {% block content %}
+   <main>
+      <!--? Hero Start -->
+      <div class="slider-area ">
+         <div class="slider-height2 d-flex align-items-center">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-xl-12">
+                           <div class="hero-cap hero-cap2 text-center">
+                              <h2>News Details</h2>
+                           </div>
+                     </div>
+                  </div>
+               </div>
+         </div>
+      </div>
+      <!-- Hero End -->
+      <!--================Blog Area =================-->
+      <section class="blog_area single-post-area section-padding">
+         <div class="container">
+
+            <div class="row">
+               <div class="col-md-8 offset-2 col-12 posts-list">
+                  <div class="single-post">
+                     <div class="feature-img">
+                        <img class="img-fluid" src="{{ single_post.image.url }}" alt="">
+                     </div>
+                     <div class="blog_details">
+                        <h2 style="color: #2d2d2d;">{{ single_post.news_title }}</h2>
+                        <p class="excert">
+                           {{ single_post.news_text_main }}
+                        </p>
+                         {% if single_post.news_quote %}
+                        <div class="quote-wrapper">
+                           <div class="quotes">
+                               {{ single_post.news_quote }}
+                           </div>
+                        </div>
+                         {% endif %}
+                        <p>
+                            {{ single_post.news_text_secondary }}
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--================ Blog Area end =================-->
+   </main>
+   {% endblock %}

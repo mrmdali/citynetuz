@@ -1,0 +1,93 @@
+{% load static i18n app_tags %}
+{% get_logo_img as logo_img %}
+{% get_nav_left_icon as nav_left_icon %}
+{% get_nav_mail as nav_mail %}
+{% get_nav_phone_number as nav_phone_number %}
+<header>
+    <!-- Header Start -->
+    <div class="header-area">
+        <div class="main-header ">
+            <div class="header-top ">
+                <!-- Left Social -->
+                <div class="header-left-social md-show">
+                    <ul class="header-social">
+                        {% for item in nav_left_icon %}
+                        <li><a href="{{ item.social_link }}"><i class="{{ item.social_icon }}"></i></a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="container">
+                    <div class="col-xl-12">
+                        <div class="row d-flex justify-content-between align-items-center">
+                            <div class="header-info-left">
+                                <ul>
+                                    <li class="md-show"><a href="{{ nav_mail.mail_link }}">{{ nav_mail.mail_text }}</a></li>
+                                    <li><a href="{{ nav_phone_number.phone_link }}">{{ nav_phone_number.phone_text }}</a></li>
+                                </ul>
+                            </div>
+                            <div class="header-info-right">
+                                <ul>
+                                    <li class="md-show"><a href="https://cabinet.citynet.uz/login" target="_blank"><i class="ti-user"></i>Cabinet</a></li>
+                                    <li><a href="#"><i class="ti-world"></i></a></li>
+                                    <select class="lang" name="" id="" style="">
+                                        <option value="uz">Uz</option>
+                                        <option value="ru">Ru</option>
+                                    </select>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom header-sticky">
+                <!-- Logo -->
+                <div class="logo d-none d-lg-block">
+                    <a href="{% url 'index' %}"><img class="clogo" src="{{ logo_img.logo_img.url }}" alt=""></a>
+                </div>
+                <div class="container">
+                    <div class="menu-wrapper">
+                        <!-- Logo -->
+                        <div class="logo logo2 d-block d-lg-none">
+                            <a href="{% url 'index' %}"><img class="clogo" src="{{ logo_img.logo_img.url }}" alt=""></a>
+                        </div>
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li><a href="{% url 'index' %}">Home</a></li>
+                                    <li><a href="{% url 'about' %}">About</a></li>
+                                    <li><a href="{% url 'internet' %}">Internet</a></li>
+                                    <li><a href="{% url 'blog' %}">News</a></li>
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                    {% if request.user.is_staff %}
+                                        <li><a href="{% url 'requests_t0_admin_new' %}">Requests</a></li>
+                                        <li><a href="{% url 'logout' %}">Log out</a></li>
+                                    {% endif %}
+                                    <li class="hidden"><a href="https://cabinet.citynet.uz/login" target="_blank"><i class="ti-user"></i> Cabinet</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Header-search-btn -->
+                        {% if request.user.is_staff %}
+
+                        {% else %}
+                            <div class="header-search d-none d-lg-block">
+                                <form action="#" class="form-box f-right ">
+                                    <input type="text" name="Search" placeholder="Search . . .">
+                                    <div class="search-icon">
+                                        <i class="fas fa-search special-tag"></i>
+                                    </div>
+                                </form>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+</header>

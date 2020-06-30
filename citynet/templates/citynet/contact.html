@@ -1,0 +1,78 @@
+{% extends 'citynet/main.html' %}
+
+    {% block content %}
+    <main>
+        <!--? Hero Start -->
+        <div class="slider-area ">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 text-center">
+                                <h2>Contact Us</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+        <!-- ================ contact section start ================= -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="d-none d-sm-block mb-5 pb-4">
+
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Get in Touch</h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <form class="form-contact contact_form" action="" method="POST" id="contactForm">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form.full_name }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form.phone_number }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form.message_subject }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form.message_text }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="submit" class="button button-contactForm boxed-btn" value="Send">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        {% for item in contact %}
+                        <a href="{{ item.address_link }}" target="_blank">
+                            <div class="media contact-info">
+                                <span class="contact-info__icon"><i class="ti-home"></i></span>
+                                <div class="media-body">
+                                    <h3 class="">{{ item.address_title }}</h3>
+                                    <p>{{ item.address_hint }}</p>
+                                </div>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ================ contact section end ================= -->
+    </main>
+   {% endblock %}

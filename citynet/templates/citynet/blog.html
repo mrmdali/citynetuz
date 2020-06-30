@@ -1,0 +1,95 @@
+{% extends 'citynet/main.html' %}
+
+    {% block content %}
+    <main>
+        <!--? Hero Start -->
+        <div class="slider-area ">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 text-center">
+                                <h2>News</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+        <!--================Blog Area =================-->
+        <section class="blog_area section-padding">
+            <div class="container">
+                {% for item in users %}
+                <div class="row">
+                    <div class="col-md-8 offset-2 col-sm-12 mb-5 mb-lg-0">
+                        <div class="blog_left_sidebar">
+                            <a href="{% url 'single-blog' item.id %}">
+                                <article class="blog_item">
+                                    <div class="blog_item_img">
+                                        <img class="card-img rounded-0" src="{{ item.image.url }}" alt="">
+                                        <a href="#" class="blog_item_date">
+                                            <span>{{ item.created_date.day }}</span>
+                                            <p>{{ item.created_date |date:"M"  }}</p>
+                                        </a>
+                                    </div>
+                                    <div class="blog_details">
+                                        <a class="d-inline-block" href="{% url 'single-blog' item.id %}">
+                                            <h2 class="blog-head" style="color: #2d2d2d;">{{ item.news_title }}</h2>
+                                        </a>
+                                        <p>{{ item.news_text_main }}</p>
+                                    </div>
+                                </article>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <nav class="blog-pagination justify-content-center d-flex">
+                    {% if users.has_other_pages %}
+                        <ul class="pagination">
+                            {% if users.has_previous %}
+                                <li class="page-item">
+                                    <a href="?page={{ users.previous_page_number }}" class="page-link" aria-label="Previous">
+                                        <i class="ti-angle-left"></i>
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <span class="page-link" aria-label="Previous">
+                                        <i class="ti-angle-left"></i>
+                                    </span>
+                                </li>
+                            {% endif %}
+                            {% for i in users.paginator.page_range %}
+                                {% if users.number == i %}
+                                    <li class="page-item active">
+                                        <span class="page-link">{{ i }} <span class="sr-only">(current)</span></span>
+                                    </li>
+                                {% else %}
+                                    <li><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if users.has_next %}
+                                <li class="page-item">
+                                    <a href="?page={{ users.next_page_number }}" class="page-link" aria-label="Next">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                     <span class="page-link" aria-label="Previous">
+                                        <i class="ti-angle-right"></i>
+                                    </span>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                </nav>
+            </div>
+        </section>
+        <!--================Blog Area =================-->
+    </main>
+    {% endblock %}

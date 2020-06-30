@@ -1,0 +1,104 @@
+{% load static i18n app_tags %}
+{% get_title_img as title_img %}
+{% get_loader_img as loader_img %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> CityNet – интернет провайдер </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ title_img.image.url }}">
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href="{% static 'citynet/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'citynet/css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'citynet/css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'citynet/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'citynet/css/gijgo.css' %}">
+	<link rel="stylesheet" href="{% static 'citynet/css/animate.min.css' %}">
+	<link rel="stylesheet" href="{% static 'citynet/css/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'citynet/css/fontawesome-all.min.css' %}">
+	<link rel="stylesheet" href="{% static 'citynet/css/themify-icons.css' %}">
+	<link rel="stylesheet" href="{% static 'citynet/css/slick.css' %}">
+	<link rel="stylesheet" href="{% static 'citynet/css/nice-select.css' %}">
+	<link rel="stylesheet" href="{% static 'citynet/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'citynet/css/somestyle.css' %}">
+</head>
+<body>
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{{ loader_img.image.url }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Header Start -->
+    {% include 'citynet/navbar.html' %}
+    <!-- Header End -->
+
+    <!-- Block Content Start -->
+    {% block content %}
+
+
+    {% endblock %}
+    <!-- Block Content Start -->
+
+    <!-- Footer Start-->
+    {% include 'citynet/footer.html' %}
+    <!-- Footer End-->
+
+    <!-- Scroll Up -->
+    <div id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <!-- JS here -->
+
+    <script src="{% static 'citynet/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="{% static 'citynet/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'citynet/js/popper.min.js' %}"></script>
+    <script src="{% static 'citynet/js/bootstrap.min.js' %}"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="{% static 'citynet/js/jquery.slicknav.min.js' %}"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="{% static 'citynet/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'citynet/js/slick.min.js' %}"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="{% static 'citynet/js/wow.min.js' %}"></script>
+    <script src="{% static 'citynet/js/animated.headline.js' %}"></script>
+    <script src="{% static 'citynet/js/jquery.magnific-popup.js' %}"></script>
+
+    <!-- Date Picker -->
+    <script src="{% static 'citynet/js/gijgo.min.js' %}"></script>
+    <!-- Nice-select, sticky -->
+    <script src="{% static 'citynet/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'citynet/js/jquery.sticky.js' %}"></script>
+    
+    <!-- counter , waypoint -->
+    <script src="{% static 'citynet/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'citynet/js/waypoints.min.js' %}"></script>
+    
+    <!-- contact js -->
+    <script src="{% static 'citynet/js/contact.js' %}"></script>
+    <script src="{% static 'citynet/js/jquery.form.js' %}"></script>
+    <script src="{% static 'citynet/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'citynet/js/mail-script.js' %}"></script>
+    <script src="{% static 'citynet/js/jquery.ajaxchimp.min.js' %}"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="{% static 'citynet/js/plugins.js' %}"></script>
+    <script src="{% static 'citynet/js/main.js' %}"></script>
+    
+    </body>
+</html>
