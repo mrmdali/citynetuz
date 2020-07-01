@@ -25,7 +25,7 @@ SECRET_KEY = '%)f#56u!gdif+a7*8x=p$#@na)_!p++*oa((oh+t#91#9w*a&t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['murodali.pythonanywhere.com']
 
 
 # Application definition
@@ -120,6 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/murodali/citynetuz/static'
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [

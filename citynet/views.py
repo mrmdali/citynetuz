@@ -86,7 +86,7 @@ def blog(request):
     except EmptyPage:
         users = paginator.page(paginator.num_pages)
 
-    context = {'news_item': news_item, 'users': users}
+    context = {'users': users}
     return render(request, 'citynet/blog.html', context)
 
 def singl_blog(request, pk):
@@ -107,19 +107,47 @@ def contact(request):
 
 @login_required(login_url='login')
 def requests_t0_admin_new(request):
-    requests = GetInTouch.objects.order_by('-id')
-    context = {'requests': requests}
+    requests = GetInTouch.objects.order_by('-id').filter(read_or_not=False)
+    requests_new = GetInTouch.objects.order_by('-id').filter(read_or_not=False).count()
+    requests_done = GetInTouch.objects.order_by('-id').filter(read_or_not=True).count()
+    request_all = GetInTouch.objects.all().count()
+    page = request.GET.get('page', 1)
+    paginator = Paginator(requests, 10)
+    try:
+        users = paginator.page(page)
+    except PageNotAnInteger:
+        users = paginator.page(1)
+    except EmptyPage:
+        users = paginator.page(paginator.num_pages)
+    context = {'users': users, 'requests_new': requests_new,
+               'requests_done': requests_done, 'request_all': request_all
+               }
     return render(request, 'citynet/requests_t0_admin_new.html', context)
 
 @login_required(login_url='login')
 def requests_t0_admin_done(request):
-    requests = GetInTouch.objects.order_by('-id')
-    context = {'requests': requests}
+    requests = GetInTouch.objects.order_by('-id').filter(read_or_not=True)
+    requests_new = GetInTouch.objects.order_by('-id').filter(read_or_not=False).count()
+    requests_done = GetInTouch.objects.order_by('-id').filter(read_or_not=True).count()
+    request_all = GetInTouch.objects.all().count()
+    page = request.GET.get('page', 1)
+    paginator = Paginator(requests, 10)
+    try:
+        users = paginator.page(page)
+    except PageNotAnInteger:
+        users = paginator.page(1)
+    except EmptyPage:
+        users = paginator.page(paginator.num_pages)
+    context = {'users': users, 'requests_new': requests_new,
+               'requests_done': requests_done, 'request_all': request_all}
     return render(request, 'citynet/requests_t0_admin_done.html', context)
 
 @login_required(login_url='login')
 def request_edit(request, pk):
     edit_request = GetInTouch.objects.get(id=pk)
+    requests_new = GetInTouch.objects.order_by('-id').filter(read_or_not=False).count()
+    requests_done = GetInTouch.objects.order_by('-id').filter(read_or_not=True).count()
+    request_all = GetInTouch.objects.all().count()
     form = GetInTouchBoolen(instance=edit_request)
     if request.method == 'POST':
         form = GetInTouchBoolen(request.POST, instance=edit_request)
@@ -129,5 +157,6 @@ def request_edit(request, pk):
             return redirect('requests_t0_admin_new')
         else:
             print('bolmadi')
-    context = {'edit_request': edit_request, 'form': form}
+    context = {'edit_request': edit_request, 'form': form, 'requests_new': requests_new,
+               'requests_done': requests_done, 'request_all': request_all}
     return render(request, 'citynet/edit_request.html', context)
