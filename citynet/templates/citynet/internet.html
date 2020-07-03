@@ -1,5 +1,5 @@
 {% extends 'citynet/main.html' %}
-
+{% load static i18n %}
     {% block content %}
     <main>
         <!--? Hero Start -->
@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 text-center">
-                                <h2>All Tariffs</h2>
+                                <h2>{% trans 'Все Тарифыи' %}</h2>
                             </div>
                         </div>
                     </div>
@@ -45,12 +45,12 @@
 
                                             <thead>
                                                 <tr>
-                                                    <th>Название Тарифа</th>
-                                                    <th class="text-center">Скорость</th>
-                                                    <th class="text-center">Ночной Серфинг <br>
+                                                    <th>{% trans 'Название Тарифа' %}</th>
+                                                    <th class="text-center">{% trans 'Скорость' %}</th>
+                                                    <th class="text-center">{% trans 'Ночной Серфинг' %} <br>
                                                     00:00 - 10:00</th>
-                                                    <th class="text-center">Стоимность</th>
-                                                    <th class="text-center">Заказать</th>
+                                                    <th class="text-center">{% trans 'Стоимность' %}</th>
+                                                    <th class="text-center">{% trans 'Заказать' %}</th>
                                                 </tr>
                                             </thead>
 
@@ -66,7 +66,7 @@
                                                             {% if item.tariff_button %}
                                                                 <a type="button" class="boxed-btn btn-sm m-0" {% url 'contact' %}>{{ item.tariff_button }}</a>
                                                             {% else %}
-                                                                <a type="button" class="boxed-btn btn-sm m-0" {% url 'contact' %}>Заказать</a>
+                                                                <a type="button" class="boxed-btn btn-sm m-0" {% url 'contact' %}>{% trans 'Заказать' %}</a>
                                                             {% endif %}
                                                         </td>
                                                     </tr>
@@ -93,7 +93,7 @@
                                     <div class="cl-xl-7 col-lg-8 col-md-10">
                                         <!-- Section Tittle -->
                                         <div class="section-tittle text-center mb-70">
-                                            <h2>Безлимитные Интернет</h2>
+                                            <h2>{% trans 'Безлимитные Интернет' %}</h2>
                                         </div> 
                                     </div>
                                 </div>
@@ -103,12 +103,11 @@
 
                                             <thead>
                                                 <tr>
-                                                    <th>Название Тарифа</th>
-                                                    <th class="text-center">Скорость</th>
-                                                    <th class="text-center">Ночной Серфинг <br>
-                                                    00:00 - 10:00</th>
-                                                    <th class="text-center">Стоимность</th>
-                                                    <th class="text-center">Заказать</th>
+                                                    <th>{% trans 'Название Тарифа' %}</th>
+                                                    <th class="text-center">{% trans 'Скорость' %}</th>
+                                                    <th class="text-center">{% trans 'TAS-IX' %}</th>
+                                                    <th class="text-center">{% trans 'Стоимность' %}</th>
+                                                    <th class="text-center">{% trans 'Заказать' %}</th>
                                                 </tr>
                                             </thead>
 
@@ -118,13 +117,13 @@
                                                     <tr>
                                                         <th scope="row">{{ item.tariff_name }}</th>
                                                         <td class="text-center">{{ item.tariff_speed }} Мбит/с</td>
-                                                        <td class="text-center">{{ item.tariff_speed_night }} Мбит/с</td>
+                                                        <td class="text-center">{{ item.tariff_speed_tasix }} Мбит/с</td>
                                                         <td class="text-center">{{ item.tariff_price }} Сум</td>
                                                         <td class="text-center">
                                                             {% if item.tariff_button %}
                                                                 <a type="button" class="boxed-btn btn-sm m-0" {% url 'contact' %}>{{ item.tariff_button }}</a>
                                                             {% else %}
-                                                                <a type="button" class="boxed-btn btn-sm m-0" {% url 'contact' %}>Заказать</a>
+                                                                <a type="button" class="boxed-btn btn-sm m-0" {% url 'contact' %}>{% trans 'Заказать' %}</a>
                                                             {% endif %}
                                                         </td>
                                                     </tr>
@@ -151,7 +150,7 @@
                                     <div class="cl-xl-7 col-lg-8 col-md-10">
                                         <!-- Section Tittle -->
                                         <div class="section-tittle text-center mb-70">
-                                            <h2>Безлимитные Интернет</h2>
+                                            <h2>{% trans 'Безлимитные Интернет' %}</h2>
                                         </div> 
                                     </div>
                                 </div>
@@ -161,12 +160,11 @@
 
                                             <thead>
                                                 <tr>
-                                                    <th>Название Тарифа</th>
-                                                    <th class="text-center">Скорость</th>
-                                                    <th class="text-center">Ночной Серфинг <br>
-                                                    00:00 - 10:00</th>
-                                                    <th class="text-center">Стоимность</th>
-                                                    <th class="text-center">Заказать</th>
+                                                    <th>{% trans 'Название Тарифа' %}</th>
+                                                    <th class="text-center">{% trans 'Скорость' %}</th>
+                                                    <th class="text-center">{% trans 'TAS-IX' %}</th>
+                                                    <th class="text-center">{% trans 'Стоимность' %}</th>
+                                                    <th class="text-center">{% trans 'Заказать' %}</th>
                                                 </tr>
                                             </thead>
 
@@ -176,13 +174,13 @@
                                                     <tr>
                                                         <th scope="row">{{ item.tariff_name }}</th>
                                                         <td class="text-center">{{ item.tariff_speed }} Мбит/с</td>
-                                                        <td class="text-center">{{ item.tariff_speed_night }} Мбит/с</td>
+                                                        <td class="text-center">{{ item.tariff_speed_tasix }} Мбит/с</td>
                                                         <td class="text-center">{{ item.tariff_price }} Сум</td>
                                                         <td class="text-center">
                                                             {% if item.tariff_button %}
                                                                 <a type="button" class="boxed-btn btn-sm m-0" {% url 'contact' %}>{{ item.tariff_button }}</a>
                                                             {% else %}
-                                                                <a type="button" class="boxed-btn btn-sm m-0" {% url 'contact' %}>Заказать</a>
+                                                                <a type="button" class="boxed-btn btn-sm m-0">{% trans 'Заказать' %}</a>
                                                             {% endif %}
                                                         </td>
                                                     </tr>

@@ -3,7 +3,10 @@
 {% get_nav_left_icon as nav_left_icon %}
 {% get_nav_mail as nav_mail %}
 {% get_nav_phone_number as nav_phone_number %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as languages %}
 <header>
+
     <!-- Header Start -->
     <div class="header-area">
         <div class="main-header ">
@@ -24,15 +27,27 @@
                                     <li class="md-show"><a href="{{ nav_mail.mail_link }}">{{ nav_mail.mail_text }}</a></li>
                                     <li><a href="{{ nav_phone_number.phone_link }}">{{ nav_phone_number.phone_text }}</a></li>
                                 </ul>
+
                             </div>
                             <div class="header-info-right">
                                 <ul>
-                                    <li class="md-show"><a href="https://cabinet.citynet.uz/login" target="_blank"><i class="ti-user"></i>Cabinet</a></li>
-                                    <li><a href="#"><i class="ti-world"></i></a></li>
-                                    <select class="lang" name="" id="" style="">
-                                        <option value="uz">Uz</option>
-                                        <option value="ru">Ru</option>
-                                    </select>
+                                    <li class="md-show"><a href="https://cabinet.citynet.uz/login" target="_blank"><i
+                                            class="ti-user"></i>Кабинет</a></li>
+                                    <li><a><i class="ti-world"></i></a></li>
+                                    <li>
+                                        <div class="dropdown">
+                                            <button class="lang-dropdown dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">{{ LANGUAGE_CODE }}
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right {% if LANGUAGE_CODE == language %}active{% endif %}" aria-labelledby="dropdownMenuButton">
+                                                {% for language, title in languages %}
+                                                {% get_url_tag request=request lang=language as url %}
+                                                    <a class="dropdown-item" href="{{ url }}">{{ title }}</a>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -54,16 +69,16 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
-                                    <li><a href="{% url 'index' %}">Home</a></li>
-                                    <li><a href="{% url 'about' %}">About</a></li>
-                                    <li><a href="{% url 'internet' %}">Internet</a></li>
-                                    <li><a href="{% url 'blog' %}">News</a></li>
-                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                    <li><a href="{% url 'index' %}">{% trans 'Домой' %}</a></li>
+                                    <li><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
+                                    <li><a href="{% url 'internet' %}">{% trans 'Интернет' %}</a></li>
+                                    <li><a href="{% url 'blog' %}">{% trans 'Новости' %}</a></li>
+                                    <li><a href="{% url 'contact' %}">{% trans 'Контакт' %}</a></li>
                                     {% if request.user.is_staff %}
-                                        <li><a href="{% url 'requests_t0_admin_new' %}">Requests</a></li>
-                                        <li><a href="{% url 'logout' %}">Log out</a></li>
+                                        <li><a href="{% url 'requests_t0_admin_new' %}">{% trans 'Запросы' %}</a></li>
+                                        <li><a href="{% url 'logout' %}">{% trans 'Выйти' %}</a></li>
                                     {% endif %}
-                                    <li class="hidden"><a href="https://cabinet.citynet.uz/login" target="_blank"><i class="ti-user"></i> Cabinet</a></li>
+                                    <li class="hidden"><a href="https://cabinet.citynet.uz/login" target="_blank"><i class="ti-user"></i> {% trans 'Кабинет' %}</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -73,7 +88,7 @@
                         {% else %}
                             <div class="header-search d-none d-lg-block">
                                 <form action="#" class="form-box f-right ">
-                                    <input type="text" name="Search" placeholder="Search . . .">
+                                    <input type="text" name="Search" placeholder="{% trans 'Поиск . . .' %}">
                                     <div class="search-icon">
                                         <i class="fas fa-search special-tag"></i>
                                     </div>

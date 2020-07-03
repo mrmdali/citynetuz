@@ -134,6 +134,7 @@
 
         .card__btn {
             padding: 1.5rem;
+            margin-bottom: 12px;
             font-size: 2rem;
             text-align: center;
             text-decoration: none !important;
@@ -164,13 +165,13 @@
 
 
 
-<div class="badge badge-info">All Requests: {{ request_all }}</div>
-<div class="badge badge-danger">New Requests: {{ requests_new }}</div>
-<div class="badge badge-success">Done Requests: {{ requests_done }}</div>
+<div class="badge badge-info">Все запросы: {{ request_all }}</div>
+<div class="badge badge-danger">Новые запросы: {{ requests_new }}</div>
+<div class="badge badge-success">Выполнено запросов: {{ requests_done }}</div>
 <div class="row">
-<a class="card__btn" href="{% url 'index' %}">Home <span>&rarr;</span></a>
-<a class="card__btn" href="{% url 'requests_t0_admin_new' %}">New requests <span>&rarr;</span></a>
-<a class="card__btn" href="{% url 'requests_t0_admin_done' %}">Done requests <span>&rarr;</span></a>
+<a class="card__btn" href="{% url 'index' %}">Домой <span>&rarr;</span></a>
+<a class="card__btn" href="{% url 'requests_t0_admin_new' %}">Новые запросы <span>&rarr;</span></a>
+<a class="card__btn" href="{% url 'requests_t0_admin_done' %}">Выполнено запросов <span>&rarr;</span></a>
 </div>
 
 {% for item in users %}

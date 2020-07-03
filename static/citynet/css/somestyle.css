@@ -10,6 +10,17 @@
 .header-info-left>ul>li>a:hover {
 	color: #1F7BBF;
 }
+.lang-dropdown {
+	border: 0px;
+	background-color: transparent;
+	color: #86878a;
+	cursor: pointer;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+.lang-dropdown:hover {
+	color: #1F7BBF;
+}
 ul.list>li {
 	display: block !important;
 }

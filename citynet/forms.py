@@ -14,8 +14,8 @@ class GetInTouchForm(forms.ModelForm):
             'name': 'name',
             'id': 'name',
             'onfocus': 'this.placeholder = ""',
-            'onblur': 'this.placeholder = "Enter your full name"',
-            'placeholder': ' Enter your full name'
+            'onblur': 'this.placeholder = "Введите свое полное имя"',
+            'placeholder': ' Введите свое полное имя'
 
         })
         self.fields['phone_number'].widget.attrs.update({
@@ -24,8 +24,8 @@ class GetInTouchForm(forms.ModelForm):
             'name': 'phone',
             'id': 'phone',
             'onfocus': 'this.placeholder = ""',
-            'onblur': 'this.placeholder = "Enter phone number"',
-            'placeholder': ' Enter phone number'
+            'onblur': 'this.placeholder = "Введите номер телефона"',
+            'placeholder': ' Введите номер телефона'
         })
         self.fields['message_subject'].widget.attrs.update({
             'type': 'text',
@@ -33,16 +33,16 @@ class GetInTouchForm(forms.ModelForm):
             'name': 'subject',
             'id': 'subject',
             'onfocus': 'this.placeholder = ""',
-            'onblur': 'this.placeholder = "Enter Subject"',
-            'placeholder': ' Enter Subject'
+            'onblur': 'this.placeholder = "Введите тему"',
+            'placeholder': ' Введите тему'
         })
         self.fields['message_text'].widget.attrs.update({
             'class': 'form-control w-100',
             'name': 'message',
             'id': 'message',
             'onfocus': 'this.placeholder = ""',
-            'onblur': 'this.placeholder = "Enter Message"',
-            'placeholder': ' Enter Message',
+            'onblur': 'this.placeholder = "Введите сообщение"',
+            'placeholder': ' Введите сообщение',
             'cols': '30',
             'rows': '9'
         })

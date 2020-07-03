@@ -1,5 +1,5 @@
 {% extends 'citynet/main.html' %}
-{% load static %}
+{% load static i18n %}
 {% block content %}
 <main>
     <!--? slider Area Start-->
@@ -16,7 +16,7 @@
                                 <h1 data-animation="fadeInLeft" data-delay=".4s">{{ item.banner_title }}</h1>
                                 <!-- Hero-btn -->
                                 <div class="hero__btn">
-                                    <a href="{% url 'contact' %}" class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">Get Started</a>
+                                    <a href="{% url 'contact' %}" class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">Начать</a>
                                 </div>
                             </div>
                         </div>
@@ -60,20 +60,12 @@
                 </div>
                 {% endfor %}
             </div>
-            <!-- Section Button -->
-            <!-- <div class="row">
-                <div class="col-lg-12">
-                    <div class="browse-btn2 text-center mt-50">
-                        <a href="courses.html" class="btn">Find More Courses</a>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
     <!-- Services Area End -->
 
     <!--? Count Down Start -->
-    <div class="count-down-area pt-90 pb-60 section-bg">
+    <div class="count-down-area pt-90 pb-60 section-bg" data-background="{% static 'citynet/img/gallery/section_bg01.png' %}">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12 col-md-12">
@@ -114,7 +106,7 @@
                                 <li><span class="{{ item.item_icon }}"></span> {{ item.item_text }}</li>
                             {% endfor %}
                         </ul>
-                        <a href="{% url 'about' %}" class="btn">More About Us</a>
+                        <a href="{% url 'about' %}" class="btn">{% trans 'Узнать Больше' %}</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
@@ -149,12 +141,12 @@
 
                         <thead>
                             <tr>
-                                <th>Название Тарифа</th>
-                                <th class="text-center">Скорость</th>
-                                <th class="text-center">Ночной Серфинг <br>
+                                <th>{% trans 'Название Тарифа' %}</th>
+                                <th class="text-center">{% trans 'Скорость' %}</th>
+                                <th class="text-center">{% trans 'Ночной Серфинг' %} <br>
                                 00:00 - 10:00</th>
-                                <th class="text-center">Стоимность</th>
-                                <th class="text-center">Заказать</th>
+                                <th class="text-center">{% trans 'Стоимность' %}</th>
+                                <th class="text-center">{% trans 'Заказать' %}</th>
                             </tr>
                         </thead>
 
@@ -163,14 +155,14 @@
                             {% if item.type_customer.id == 1 %}
                                 <tr>
                                     <th scope="row">{{ item.tariff_name }}</th>
-                                    <td class="text-center">{{ item.tariff_speed }} Мбит/с</td>
-                                    <td class="text-center">{{ item.tariff_speed_night }} Мбит/с</td>
-                                    <td class="text-center">{{ item.tariff_price }} Сум</td>
+                                    <td class="text-center">{{ item.tariff_speed }} {% trans 'Мбит/с' %}</td>
+                                    <td class="text-center">{{ item.tariff_speed_night }} {% trans 'Мбит/с' %}</td>
+                                    <td class="text-center">{{ item.tariff_price }} {% trans 'Сум' %}</td>
                                     <td class="text-center">
                                         {% if item.tariff_button %}
                                             <a type="button" class="boxed-btn btn-sm m-0" href="{% url 'contact' %}">{{ item.tariff_button }}</a>
                                         {% else %}
-                                            <a type="button" class="boxed-btn btn-sm m-0">Заказать</a>
+                                            <a type="button" class="boxed-btn btn-sm m-0">{% trans 'Заказать' %}</a>
                                         {% endif %}
                                     </td>
                                 </tr>
@@ -185,7 +177,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="browse-btn2 text-center mt-50">
-                        <a href="{% url 'internet' %}" class="btn">Больше О Траффиках</a>
+                        <a href="{% url 'internet' %}" class="btn">{% trans 'Узнать Больше' %}</a>
                     </div>
                 </div>
             </div>
@@ -281,8 +273,8 @@
                                 {% if item.news_type %}
                                     <p>| {{ item.news_type }}</p>
                                 {% endif %}
-                                <h3><a href="blog_details.html">{{ item.news_title }}</a></h3>
-                                <a href="{% url 'single-blog' item.id %}" class="more-btn">Read more »</a>
+                                <h3><a href="{% url 'single-blog' item.id %}">{{ item.news_title }}</a></h3>
+                                <a href="{% url 'single-blog' item.id %}" class="more-btn">{% trans 'ЧИТАТЬ ДАЛЕЕ' %} »</a>
                             </div>
                         </div>
                     </div>

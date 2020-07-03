@@ -25,8 +25,10 @@ SECRET_KEY = '%)f#56u!gdif+a7*8x=p$#@na)_!p++*oa((oh+t#91#9w*a&t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['murodali.pythonanywhere.com']
-
+ALLOWED_HOSTS = []
+'''
+'murodali.pythonanywhere.com' 
+'''
 
 # Application definition
 
@@ -39,15 +41,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-
+INSTALLED_APPS += (
+    'parler',
+)
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'citynetuz.urls'
@@ -105,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'Asia/Tashkent'
 
@@ -115,12 +121,17 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')
+]
+LANGUAGES = [
+    ('ru', 'Ru'),
+    ('uz', 'Uz'),
+]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/murodali/citynetuz/static'
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
