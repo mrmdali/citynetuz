@@ -16,7 +16,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
                             <div class="single-footer-caption mb-50">
                                 <div class="footer-tittle">
-                                    <h4>Menus</h4>
+                                    <h4>{% trans 'Меню' %}</h4>
                                     <ul>
                                        <li><a href="{% url 'index' %}">{% trans 'Домой' %}</a></li>
                                     <li><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
@@ -32,7 +32,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
                             <div class="single-footer-caption mb-50">
                                 <div class="footer-tittle">
-                                    <h4>Contact Us</h4>
+                                    <h4>{% trans 'Связаться С Нами' %}</h4>
                                     {% for item in footer_address %}
                                     <a href="{{ item.address_link }}" target="_blank">
                                         <div class="media contact-info">

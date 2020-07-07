@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-06 16:09+0500\n"
+"POT-Creation-Date: 2020-07-07 12:13+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,6 +55,10 @@ msgstr "Biz bilan bog'lanish"
 msgid "Связаться"
 msgstr "Aloqaga chiqish"
 
+#: .\citynet\templates\citynet\footer.html:19
+msgid "Меню"
+msgstr "Menyular"
+
 #: .\citynet\templates\citynet\footer.html:21
 #: .\citynet\templates\citynet\navbar.html:72
 msgid "Домой"
@@ -74,6 +78,10 @@ msgstr "Internet"
 #: .\citynet\templates\citynet\navbar.html:76
 msgid "Контакт"
 msgstr "Aloqa"
+
+#: .\citynet\templates\citynet\footer.html:35
+msgid "Связаться С Нами"
+msgstr "Biz bilan bog'lanish"
 
 #: .\citynet\templates\citynet\index.html:19
 msgid "Начать"
@@ -152,6 +160,11 @@ msgstr "TAS-IX"
 msgid "CityNet – интернет провайдер"
 msgstr "Citynet - Internet Provayder"
 
+#: .\citynet\templates\citynet\navbar.html:35
+#: .\citynet\templates\citynet\navbar.html:81
+msgid "Кабинет"
+msgstr "Kabinet"
+
 #: .\citynet\templates\citynet\navbar.html:78
 msgid "Запросы"
 msgstr "So'rovlar"
@@ -159,10 +172,6 @@ msgstr "So'rovlar"
 #: .\citynet\templates\citynet\navbar.html:79
 msgid "Выйти"
 msgstr "Chiqish"
-
-#: .\citynet\templates\citynet\navbar.html:81
-msgid "Кабинет"
-msgstr "Kabinet"
 
 #: .\citynet\templates\citynet\navbar.html:91
 msgid "Поиск . . ."
