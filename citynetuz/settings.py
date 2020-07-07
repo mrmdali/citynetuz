@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'parler',
     'citynet.apps.CitynetConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,9 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-INSTALLED_APPS += (
-    'parler',
-)
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -84,7 +82,7 @@ WSGI_APPLICATION = 'citynetuz.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqliteCitynet'),
     }
 }
 
@@ -128,6 +126,18 @@ LANGUAGES = [
     ('ru', 'Ru'),
     ('uz', 'Uz'),
 ]
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'ru', },
+        {'code': 'uz', },
+    ),
+    'default': {
+        'fallbacks': [LANGUAGE_CODE],          # defaults to PARLER_DEFAULT_LANGUAGE_CODE
+        'hide_untranslated': False,   # the default; let .active_translations() return fallbacks too.
+    }
+}
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 

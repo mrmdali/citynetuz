@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+#: .\citynet\urls.py:6
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-02 15:21+0500\n"
+"POT-Creation-Date: 2020-07-06 16:09+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,13 +17,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: .\citynet\models.py:34
+msgid "Banner_cap"
+msgstr ""
+
+#: .\citynet\models.py:35
+msgid "Banner_title"
+msgstr ""
+
+#: .\citynet\models.py:42
+msgid "service_cap"
+msgstr ""
+
+#: .\citynet\models.py:43
+msgid "service_title"
+msgstr ""
+
 #: .\citynet\templates\citynet\about.html:12
 msgid "О компании"
 msgstr "Kompaniyamiz haqida"
 
 #: .\citynet\templates\citynet\blog.html:12
 #: .\citynet\templates\citynet\footer.html:24
-#: .\citynet\templates\citynet\navbar.html:71
+#: .\citynet\templates\citynet\navbar.html:75
 msgid "Новости"
 msgstr "Yangiliklar"
 
@@ -40,24 +56,28 @@ msgid "Связаться"
 msgstr "Aloqaga chiqish"
 
 #: .\citynet\templates\citynet\footer.html:21
-#: .\citynet\templates\citynet\navbar.html:68
+#: .\citynet\templates\citynet\navbar.html:72
 msgid "Домой"
 msgstr "Asosiy"
 
 #: .\citynet\templates\citynet\footer.html:22
-#: .\citynet\templates\citynet\navbar.html:69
+#: .\citynet\templates\citynet\navbar.html:73
 msgid "О нас"
 msgstr "Biz haqimizda"
 
 #: .\citynet\templates\citynet\footer.html:23
-#: .\citynet\templates\citynet\navbar.html:70
+#: .\citynet\templates\citynet\navbar.html:74
 msgid "Интернет"
 msgstr "Internet"
 
 #: .\citynet\templates\citynet\footer.html:25
-#: .\citynet\templates\citynet\navbar.html:72
+#: .\citynet\templates\citynet\navbar.html:76
 msgid "Контакт"
 msgstr "Aloqa"
+
+#: .\citynet\templates\citynet\index.html:19
+msgid "Начать"
+msgstr "Boshlash"
 
 #: .\citynet\templates\citynet\index.html:109
 #: .\citynet\templates\citynet\index.html:180
@@ -132,26 +152,28 @@ msgstr "TAS-IX"
 msgid "CityNet – интернет провайдер"
 msgstr "Citynet - Internet Provayder"
 
-#: .\citynet\templates\citynet\navbar.html:74
+#: .\citynet\templates\citynet\navbar.html:78
 msgid "Запросы"
 msgstr "So'rovlar"
 
-#: .\citynet\templates\citynet\navbar.html:75
+#: .\citynet\templates\citynet\navbar.html:79
 msgid "Выйти"
 msgstr "Chiqish"
 
-#: .\citynet\templates\citynet\navbar.html:77
-#, fuzzy
-#| msgid "Интернет"
+#: .\citynet\templates\citynet\navbar.html:81
 msgid "Кабинет"
 msgstr "Kabinet"
 
-#: .\citynet\templates\citynet\navbar.html:87
+#: .\citynet\templates\citynet\navbar.html:91
 msgid "Поиск . . ."
 msgstr "Qidiruv . . ."
 
 #: .\citynet\views.py:51
 msgid "index"
+msgstr ""
+
+#: .\citynetuz\urls.py:30
+msgid "admin/"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:7
