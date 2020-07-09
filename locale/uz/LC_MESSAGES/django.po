@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-07 12:13+0500\n"
+"POT-Creation-Date: 2020-07-09 14:28+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,8 +38,8 @@ msgid "О компании"
 msgstr "Kompaniyamiz haqida"
 
 #: .\citynet\templates\citynet\blog.html:12
-#: .\citynet\templates\citynet\footer.html:24
-#: .\citynet\templates\citynet\navbar.html:75
+#: .\citynet\templates\citynet\footer.html:25
+#: .\citynet\templates\citynet\navbar.html:76
 msgid "Новости"
 msgstr "Yangiliklar"
 
@@ -74,12 +74,18 @@ msgstr "Biz haqimizda"
 msgid "Интернет"
 msgstr "Internet"
 
-#: .\citynet\templates\citynet\footer.html:25
-#: .\citynet\templates\citynet\navbar.html:76
+#: .\citynet\templates\citynet\footer.html:24
+#: .\citynet\templates\citynet\navbar.html:75
+#: .\citynet\templates\citynet\speedtest.html:139
+msgid "Тест Скорости"
+msgstr "Tezlikni Tekshirish"
+
+#: .\citynet\templates\citynet\footer.html:26
+#: .\citynet\templates\citynet\navbar.html:77
 msgid "Контакт"
 msgstr "Aloqa"
 
-#: .\citynet\templates\citynet\footer.html:35
+#: .\citynet\templates\citynet\footer.html:36
 msgid "Связаться С Нами"
 msgstr "Biz bilan bog'lanish"
 
@@ -87,39 +93,39 @@ msgstr "Biz bilan bog'lanish"
 msgid "Начать"
 msgstr "Boshlash"
 
-#: .\citynet\templates\citynet\index.html:109
-#: .\citynet\templates\citynet\index.html:180
+#: .\citynet\templates\citynet\index.html:110
+#: .\citynet\templates\citynet\index.html:181
 msgid "Узнать Больше"
 msgstr "Ko'proq ko'rish"
 
-#: .\citynet\templates\citynet\index.html:144
+#: .\citynet\templates\citynet\index.html:145
 #: .\citynet\templates\citynet\internet.html:48
 #: .\citynet\templates\citynet\internet.html:106
 #: .\citynet\templates\citynet\internet.html:163
 msgid "Название Тарифа"
 msgstr "Tarif nomi"
 
-#: .\citynet\templates\citynet\index.html:145
+#: .\citynet\templates\citynet\index.html:146
 #: .\citynet\templates\citynet\internet.html:49
 #: .\citynet\templates\citynet\internet.html:107
 #: .\citynet\templates\citynet\internet.html:164
 msgid "Скорость"
 msgstr "Tezlik"
 
-#: .\citynet\templates\citynet\index.html:146
+#: .\citynet\templates\citynet\index.html:147
 #: .\citynet\templates\citynet\internet.html:50
 msgid "Ночной Серфинг"
 msgstr "Tungi tezlik"
 
-#: .\citynet\templates\citynet\index.html:148
+#: .\citynet\templates\citynet\index.html:149
 #: .\citynet\templates\citynet\internet.html:52
 #: .\citynet\templates\citynet\internet.html:109
 #: .\citynet\templates\citynet\internet.html:166
 msgid "Стоимность"
 msgstr "Narxi"
 
-#: .\citynet\templates\citynet\index.html:149
-#: .\citynet\templates\citynet\index.html:165
+#: .\citynet\templates\citynet\index.html:150
+#: .\citynet\templates\citynet\index.html:166
 #: .\citynet\templates\citynet\internet.html:53
 #: .\citynet\templates\citynet\internet.html:69
 #: .\citynet\templates\citynet\internet.html:110
@@ -129,20 +135,29 @@ msgstr "Narxi"
 msgid "Заказать"
 msgstr "Buyurtma qilish"
 
-#: .\citynet\templates\citynet\index.html:158
 #: .\citynet\templates\citynet\index.html:159
+#: .\citynet\templates\citynet\index.html:160
+#: .\citynet\templates\citynet\internet.html:62
+#: .\citynet\templates\citynet\internet.html:63
+#: .\citynet\templates\citynet\internet.html:119
+#: .\citynet\templates\citynet\internet.html:120
+#: .\citynet\templates\citynet\internet.html:176
+#: .\citynet\templates\citynet\internet.html:177
 msgid "Мбит/с"
 msgstr "Mbit/s"
 
-#: .\citynet\templates\citynet\index.html:160
+#: .\citynet\templates\citynet\index.html:161
+#: .\citynet\templates\citynet\internet.html:64
+#: .\citynet\templates\citynet\internet.html:121
+#: .\citynet\templates\citynet\internet.html:178
 msgid "Сум"
 msgstr "So'm"
 
-#: .\citynet\templates\citynet\index.html:277
+#: .\citynet\templates\citynet\index.html:278
 msgid "ЧИТАТЬ ДАЛЕЕ"
 msgstr "ko'proq ko'rish"
 
-#: .\citynet\templates\citynet\internet.html:12
+#: .\citynet\templates\citynet\internet.html:13
 msgid "Все Тарифыи"
 msgstr "Barcha tariflar"
 
@@ -161,25 +176,47 @@ msgid "CityNet – интернет провайдер"
 msgstr "Citynet - Internet Provayder"
 
 #: .\citynet\templates\citynet\navbar.html:35
-#: .\citynet\templates\citynet\navbar.html:81
+#: .\citynet\templates\citynet\navbar.html:82
 msgid "Кабинет"
 msgstr "Kabinet"
 
-#: .\citynet\templates\citynet\navbar.html:78
+#: .\citynet\templates\citynet\navbar.html:79
 msgid "Запросы"
 msgstr "So'rovlar"
 
-#: .\citynet\templates\citynet\navbar.html:79
+#: .\citynet\templates\citynet\navbar.html:80
 msgid "Выйти"
 msgstr "Chiqish"
 
-#: .\citynet\templates\citynet\navbar.html:91
-msgid "Поиск . . ."
-msgstr "Qidiruv . . ."
+#: .\citynet\templates\citynet\speedtest.html:156
+msgid "Скачать"
+msgstr "Ko'chirib olish"
 
-#: .\citynet\views.py:51
-msgid "index"
-msgstr ""
+#: .\citynet\templates\citynet\speedtest.html:159
+#: .\citynet\templates\citynet\speedtest.html:165
+msgid "Мбпс"
+msgstr "Mbit/s"
+
+#: .\citynet\templates\citynet\speedtest.html:162
+msgid "Загрузить"
+msgstr "Yuklash"
+
+#: .\citynet\templates\citynet\speedtest.html:170
+msgid "Пинг"
+msgstr "Ping"
+
+#: .\citynet\templates\citynet\speedtest.html:173
+#: .\citynet\templates\citynet\speedtest.html:179
+msgid "мс"
+msgstr "ms"
+
+#: .\citynet\templates\citynet\speedtest.html:176
+msgid "Дрожание"
+msgstr "Jitter"
+
+#: .\citynet\templates\citynet\speedtest.html:183
+msgid "Ваш IP-адрес"
+msgstr "IP manzilingiz"
 
 #: .\citynetuz\urls.py:30
 msgid "admin/"

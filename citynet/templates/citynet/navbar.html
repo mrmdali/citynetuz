@@ -72,6 +72,7 @@
                                     <li><a href="{% url 'index' %}">{% trans 'Домой' %}</a></li>
                                     <li><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
                                     <li><a href="{% url 'internet' %}">{% trans 'Интернет' %}</a></li>
+                                    <li><a href="{% url 'speedtest' %}">{% trans 'Тест Скорости' %}</a></li>
                                     <li><a href="{% url 'blog' %}">{% trans 'Новости' %}</a></li>
                                     <li><a href="{% url 'contact' %}">{% trans 'Контакт' %}</a></li>
                                     {% if request.user.is_staff %}
@@ -83,18 +84,18 @@
                             </nav>
                         </div>
                         <!-- Header-search-btn -->
-                        {% if request.user.is_staff %}
-
-                        {% else %}
-                            <div class="header-search d-none d-lg-block">
-                                <form action="#" class="form-box f-right ">
-                                    <input type="text" name="Search" placeholder="{% trans 'Поиск . . .' %}">
-                                    <div class="search-icon">
-                                        <i class="fas fa-search special-tag"></i>
-                                    </div>
-                                </form>
-                            </div>
-                        {% endif %}
+{#                        {% if request.user.is_staff %}#}
+{##}
+{#                        {% else %}#}
+{#                            <div class="header-search d-none d-lg-block">#}
+{#                                <form action="#" class="form-box f-right ">#}
+{#                                    <input type="text" name="Search" placeholder="{% trans 'Поиск . . .' %}">#}
+{#                                    <div class="search-icon">#}
+{#                                        <i class="fas fa-search special-tag"></i>#}
+{#                                    </div>#}
+{#                                </form>#}
+{#                            </div>#}
+{#                        {% endif %}#}
                     </div>
                     <!-- Mobile Menu -->
                     <div class="col-12">

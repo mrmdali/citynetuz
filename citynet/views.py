@@ -3,8 +3,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login as lgn, logout as lgt, authenticate
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.utils import translation
-from django.utils.translation import gettext as _
 from .models import *
 from .forms import *
 
@@ -43,12 +41,6 @@ def index(request):
     news_header = NewsHeader.objects.last()
     news_item_last_two = NewsItem.objects.order_by('-id')[:2]
     news_item = NewsItem.objects.order_by('-id')
-    # user_language = 'uz'
-    # translation.activate(user_language)
-    # request.session[translation.LANGUAGE_SESSION_KEY] = user_language
-    # if translation.LANGUAGE_SESSION_KEY in request.session:
-    #     del request.session[translation.LANGUAGE_SESSION_KEY]
-    title = _('index')
     context = {'banner': banner, 'service_header': service_header,
                'service_item': service_item, 'counter': counter,
                'about': about, 'about_item': about_item,
@@ -57,7 +49,6 @@ def index(request):
                'client': client, 'client_img': client_img,
                'news_header': news_header, 'news_item': news_item,
                'news_item_last_two': news_item_last_two,
-               'title': title,
                }
     return render(request, 'citynet/index.html', context)
 
@@ -83,6 +74,10 @@ def internet(request):
                'tariff_about': tariff_about, 'client': client, 'client_img': client_img,
                }
     return render(request, 'citynet/internet.html', context)
+
+def speedtest(request):
+
+    return render(request, 'citynet/speedtest.html')
 
 def blog(request):
     news_item = NewsItem.objects.order_by('-id')
