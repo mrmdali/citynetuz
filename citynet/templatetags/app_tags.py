@@ -1,5 +1,4 @@
 from django import template
-from django.utils.translation import get_language
 from citynet.models import *
 
 register = template.Library()
@@ -54,3 +53,7 @@ def get_footer_social_icon():
 @register.simple_tag
 def get_footer_author():
     return FooterAuthor.objects.last()
+
+@register.simple_tag
+def get_oferta():
+    return Oferta.objects.last()

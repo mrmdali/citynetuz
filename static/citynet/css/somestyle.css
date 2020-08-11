@@ -170,3 +170,10 @@ div.testGroup {
 		margin: 0 auto;
 	}
 }
+.doc-item i {
+	color: #A01E2B;
+	font-size: 30px;
+}
+.doc-item span {
+	vertical-align: text-bottom;
+}

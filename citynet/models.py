@@ -197,3 +197,18 @@ class GetInTouch(models.Model):
     message_subject = models.CharField(max_length=100)
     message_text = models.TextField()
     read_or_not = models.BooleanField(default=False)
+# ================= Oferta ================
+class Oferta(models.Model):
+    file_oferta = models.FileField()
+# ================= Documents ================
+class DocType(models.Model):
+    name = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
+class Doc(models.Model):
+    doctype = models.ForeignKey(DocType, null=True, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    file = models.FileField()
+
+    def __str__(self):
+        return self.title

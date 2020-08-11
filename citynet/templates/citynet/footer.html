@@ -4,6 +4,7 @@
 {% get_footer_about_social as footer_about_social %}
 {% get_footer_social_icon as footer_social_icon %}
 {% get_footer_author as footer_author %}
+{% get_oferta as oferta %}
 <footer>
     <!--? Footer Start-->
     <div class="footer-area footer-bg">
@@ -21,9 +22,12 @@
                                         <li><a href="{% url 'index' %}">{% trans 'Домой' %}</a></li>
                                         <li><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
                                         <li><a href="{% url 'internet' %}">{% trans 'Интернет' %}</a></li>
-                                        <li><a href="{% url 'speedtest' %}">{% trans 'Тест Скорости' %}</a></li>
+{#                                        <li><a href="{% url 'speedtest' %}">{% trans 'Тест Скорости' %}</a></li#}
                                         <li><a href="{% url 'blog' %}">{% trans 'Новости' %}</a></li>
                                         <li><a href="{% url 'contact' %}">{% trans 'Контакт' %}</a></li>
+                                        <li><a target="_blank" href="{{ oferta.file_oferta.url }}">{% trans 'Публичная оферта' %}</a></li>
+                                        <li><a href="{% url 'docs' %}">{% trans 'Документы' %}</a></li>
+
                                     </ul>
                                 </div>
                             </div>

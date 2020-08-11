@@ -157,10 +157,13 @@ def request_edit(request, pk):
         form = GetInTouchBoolen(request.POST, instance=edit_request)
         if form.is_valid():
             form.save()
-            print('boldi')
             return redirect('requests_t0_admin_new')
-        else:
-            print('bolmadi')
     context = {'edit_request': edit_request, 'form': form, 'requests_new': requests_new,
                'requests_done': requests_done, 'request_all': request_all}
     return render(request, 'citynet/edit_request.html', context)
+
+def docs(request):
+    doc = Doc.objects.all()
+    doc_type = DocType.objects.all()
+    context = {'doc': doc, 'doc_type': doc_type}
+    return render(request, 'citynet/docs.html', context)

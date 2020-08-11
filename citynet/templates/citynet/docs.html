@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'citynet/main.html' %}
+{% load static i18n %}
+   {% block content %}
+   <main>
+      <!--? Hero Start -->
+      <div class="slider-area ">
+         <div class="slider-height2 d-flex align-items-center">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-xl-12">
+                           <div class="hero-cap hero-cap2 text-center">
+                              <h2>{% trans 'Документы' %}</h2>
+                           </div>
+                     </div>
+                  </div>
+               </div>
+         </div>
+      </div>
+      <!-- Hero End -->
+      <!--================Blog Area =================-->
+       <section class="blog_area single-post-area section-padding">
+           <div class="container">
+
+               <div class="row">
+                   <div class="col-md-12 posts-list">
+                       {% for item in doc_type %}
+                           <h3><i class="fa fa-circle-notch mr-2"></i>{{ item.name }}</h3>
+                           {% for docs in doc %}
+                               {% if docs.doctype == item %}
+                               <div class="mt-3 pl-5">
+                                   <h4>{{ docs.title }}</h4>
+                                   <a href="{{ docs.file.url }}">
+                                       <p class="doc-item mt-2">
+                                           <i class="fa fa-file-pdf"></i>
+                                           <span class="pl-1">{{ docs.file.name }}</span>
+                                       </p>
+                                   </a>
+                               </div>
+                               {% endif %}
+                           {% endfor %}
+                           <hr style="margin: 15px 0px">
+                       {% endfor %}
+
+                   </div>
+               </div>
+           </div>
+       </section>
+      <!--================ Blog Area end =================-->
+   </main>
+   {% endblock %}
